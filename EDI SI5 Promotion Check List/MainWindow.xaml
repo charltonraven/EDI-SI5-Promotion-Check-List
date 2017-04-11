@@ -37,7 +37,7 @@
                 </LinearGradientBrush>
             </TextBox.BorderBrush>
         </TextBox>
-        <Label x:Name="lblCMRN" Content="Change Management Request Number:" HorizontalAlignment="Left" Margin="87,87,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
+        <Label x:Name="lblCMRN" Content="Change Management Request Number:" HorizontalAlignment="Left" Margin="65,87,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
         <TextBox x:Name="txtCMRN" HorizontalAlignment="Left" Height="26" Margin="348,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" BorderThickness="0,0,0,1">
             <TextBox.BorderBrush>
                 <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
@@ -122,7 +122,7 @@
             <CheckBox x:Name="cbFTPConnect" Content="FTP Connect" FontSize="14" FontFamily="Lucida Fax"/>
             <CheckBox x:Name="cbTRANSPORTparmFile" Content="TRANSPORT Parm File" FontSize="14" FontFamily="Lucida Fax"/>
         </ListBox>
-        <Label x:Name="lblProjectManager" Content="Project Manager:" HorizontalAlignment="Left" Margin="348,719,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
+        <Label x:Name="lblProjectManager" Content="Project Manager:" HorizontalAlignment="Left" Margin="326,719,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
         <TextBox x:Name="txtProjectManager" HorizontalAlignment="Left" Height="26" Margin="460,719,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" BorderThickness="0,0,0,1">
             <TextBox.BorderBrush>
                 <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
@@ -132,8 +132,8 @@
                 </LinearGradientBrush>
             </TextBox.BorderBrush>
         </TextBox>
-        <Label x:Name="lblCompletionDate" Content="Completion Date:" HorizontalAlignment="Left" Margin="350,788,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
-        <TextBox x:Name="txtCompletionDate" HorizontalAlignment="Left" Height="26" Margin="460,779,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" BorderThickness="0,0,0,1">
+        <Label x:Name="lblCompletionDate" Content="Completion Date:" HorizontalAlignment="Left" Margin="326,787,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
+        <TextBox x:Name="txtCompletionDate" HorizontalAlignment="Left" Height="26" Margin="465,787,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" BorderThickness="0,0,0,1">
             <TextBox.BorderBrush>
                 <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                     <GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -142,7 +142,7 @@
                 </LinearGradientBrush>
             </TextBox.BorderBrush>
         </TextBox>
-        <Button x:Name="btnSend" Content="Send for Approval" HorizontalAlignment="Left" Margin="460,878,0,0" VerticalAlignment="Top" Width="131"/>
+        <Button x:Name="btnSend" Content="Send for Approval" HorizontalAlignment="Left" Margin="460,878,0,0" VerticalAlignment="Top" Width="131" FontSize="14" Click="btnSend_Click"/>
         <GroupBox x:Name="grpSendTo" Header="Send To:&#xD;&#xA;" HorizontalAlignment="Left" Height="87" Margin="658,727,0,0" VerticalAlignment="Top" Width="155" FontSize="14" FontFamily="Lucida Fax">
             <StackPanel HorizontalAlignment="Left" Height="58" Margin="0,-8,-2,0" VerticalAlignment="Top" Width="251">
                 <RadioButton x:Name="rbPJNovak" Content="PJ Novak" FontSize="14" FontFamily="Lucida Fax"/>
