@@ -1,0 +1,14 @@
+c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.exe.config
+c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.exe
+c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.pdb
+c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.csprojResolveAssemblyReference.cache
+c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\MainWindow.g.cs
+c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\App.g.cs
+c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List_MarkupCompile.cache
+c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List_MarkupCompile.lref
+c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\MainWindow.baml
+c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.g.resources
+c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI_SI5_Promotion_Check_List.Properties.Resources.resources
+c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.csproj.GenerateResource.Cache
+c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.exe
+c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.pdb
