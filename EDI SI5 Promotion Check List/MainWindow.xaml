@@ -5,11 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EDI_SI5_Promotion_Check_List"
         mc:Ignorable="d"
-        Title="Promotion Check List" Height="1107.331" Width="843.559" HorizontalContentAlignment="Center" FontSize="22" WindowStartupLocation="Manual" ScrollViewer.CanContentScroll="True" AutomationProperties.IsOffscreenBehavior="Onscreen" ScrollViewer.HorizontalScrollBarVisibility="Visible" Loaded="formMain_loaded">
+        Title="Promotion Check List" 
+        Height="1031" 
+        Width="{Binding SystemParameters.PrimaryScreenWidth}"
+        HorizontalContentAlignment="Center"
+        FontSize="22" WindowStartupLocation="Manual"
+        ScrollViewer.CanContentScroll="True"
+        AutomationProperties.IsOffscreenBehavior="Onscreen"
+        ScrollViewer.HorizontalScrollBarVisibility="Visible"
+        Loaded="formMain_loaded" d:DesignWidth="958">
     <ScrollViewer>
-        <Grid x:Name="lblUserApproval" VerticalAlignment="Center" Height="1080">
-            <Label x:Name="lblUser" Content="User:" HorizontalAlignment="Left" Margin="31,26,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
-            <TextBox x:Name="txtUser" HorizontalAlignment="Left" Height="26" Margin="87,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" BorderThickness="0,0,0,1">
+        <Grid x:Name="lblUserApproval" VerticalAlignment="Center" Height="1001" Width="910">
+            <Label x:Name="lblUser" Content="User:" HorizontalAlignment="Left" Margin="24,44,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
+            <TextBox x:Name="txtUser" HorizontalAlignment="Left" Height="36" Margin="87,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191" BorderThickness="0,0,0,1">
                 <TextBox.BorderBrush>
                     <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                         <GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -18,8 +26,8 @@
                     </LinearGradientBrush>
                 </TextBox.BorderBrush>
             </TextBox>
-            <Label x:Name="lblPartner" Content="Partner:" HorizontalAlignment="Left" Margin="292,26,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
-            <TextBox x:Name="txtPartner" HorizontalAlignment="Left" Height="26" Margin="348,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" BorderThickness="0,0,0,1">
+            <Label x:Name="lblPartner" Content="Partner:" HorizontalAlignment="Left" Margin="299,44,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
+            <TextBox x:Name="txtPartner" HorizontalAlignment="Left" Height="36" Margin="370,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" BorderThickness="0,0,0,1">
                 <TextBox.BorderBrush>
                     <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                         <GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -28,8 +36,8 @@
                     </LinearGradientBrush>
                 </TextBox.BorderBrush>
             </TextBox>
-            <Label x:Name="lblDate" Content="Date:" HorizontalAlignment="Left" Margin="576,26,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
-            <TextBox x:Name="txtDate" HorizontalAlignment="Left" Height="26" Margin="632,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" BorderThickness="0,0,0,1">
+            <Label x:Name="lblDate" Content="Date:" HorizontalAlignment="Left" Margin="580,44,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
+            <TextBox x:Name="txtDate" HorizontalAlignment="Left" Height="36" Margin="632,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" BorderThickness="0,0,0,1">
                 <TextBox.BorderBrush>
                     <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                         <GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -39,7 +47,7 @@
                 </TextBox.BorderBrush>
             </TextBox>
             <Label x:Name="lblCMRN" Content="Change Management Request Number:" HorizontalAlignment="Left" Margin="65,87,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
-            <TextBox x:Name="txtCMRN" HorizontalAlignment="Left" Height="26" Margin="348,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" BorderThickness="0,0,0,1">
+            <TextBox x:Name="txtCMRN" HorizontalAlignment="Left" Height="35" Margin="348,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" BorderThickness="0,0,0,1">
                 <TextBox.BorderBrush>
                     <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                         <GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -72,7 +80,7 @@
                 <RadioButton x:Name="rbAbandonedIMP" Content="Abandoned" Height="19" VerticalAlignment="Top" Width="105" FontSize="14" FontFamily="Lucida Fax" RenderTransformOrigin="0.5,0.5"/>
             </DockPanel>
             <Label x:Name="lblTableParmUpdateName" Content="name:" HorizontalAlignment="Left" Margin="409,259,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
-            <TextBox x:Name="txtTableParmName" HorizontalAlignment="Left" Height="26" Margin="481,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" BorderThickness="0,0,0,1">
+            <TextBox x:Name="txtTableParmName" HorizontalAlignment="Left" Height="42" Margin="481,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderThickness="0,0,0,1">
                 <TextBox.BorderBrush>
                     <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                         <GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -82,7 +90,7 @@
                 </TextBox.BorderBrush>
             </TextBox>
             <Label x:Name="lblCodeReviewBY" Content="by:" HorizontalAlignment="Left" Margin="409,408,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
-            <TextBox x:Name="txtCodeReviewBY" HorizontalAlignment="Left" Height="26" Margin="450,408,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" BorderThickness="0,0,0,1">
+            <TextBox x:Name="txtCodeReviewBY" HorizontalAlignment="Left" Height="46" Margin="450,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" BorderThickness="0,0,0,1">
                 <TextBox.BorderBrush>
                     <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                         <GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -91,8 +99,8 @@
                     </LinearGradientBrush>
                 </TextBox.BorderBrush>
             </TextBox>
-            <Label x:Name="lblCheckSignOffDate" Content="date:" HorizontalAlignment="Left" Margin="576,413,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
-            <TextBox x:Name="txtCheckSignOffDate" HorizontalAlignment="Left" Height="26" Margin="617,408,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" BorderThickness="0,0,0,1">
+            <Label x:Name="lblCheckSignOffDate" Content="date:" HorizontalAlignment="Left" Margin="576,413,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax" Width="41"/>
+            <TextBox x:Name="txtCheckSignOffDate" HorizontalAlignment="Left" Height="37" Margin="617,397,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" BorderThickness="0,0,0,1">
                 <TextBox.BorderBrush>
                     <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                         <GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -101,7 +109,7 @@
                     </LinearGradientBrush>
                 </TextBox.BorderBrush>
             </TextBox>
-            <ListBox HorizontalAlignment="Left" Height="294" Margin="76,706,0,0" VerticalAlignment="Top" Width="245" Padding="0">
+            <ListBox HorizontalAlignment="Left" Height="262" Margin="76,706,0,0" VerticalAlignment="Top" Width="245" Padding="0">
                 <CheckBox x:Name="cbEnvelopes" Content="Envelopes" FontSize="14" FontFamily="Lucida Fax" Checked="cbEnvelopes_Checked" Unchecked="cbEnvelopes_Unchecked"/>
                 <CheckBox x:Name="cbBusinessProcesses" Content="Business Processes" FontSize="14" FontFamily="Lucida Fax" Unchecked="cbBusinessProcesses_Unchecked" Checked="cbBusinessProcesses_Checked"/>
                 <CheckBox x:Name="cbServiceAdapters" Content="Service Adapters" FontSize="14" FontFamily="Lucida Fax" Checked="cbServiceAdapters_Checked" Unchecked="cbServiceAdapters_Unchecked"/>
@@ -119,7 +127,7 @@
                 <CheckBox x:Name="cbTRANSPORTparmFile" Content="TRANSPORT Parm File" FontSize="14" FontFamily="Lucida Fax" Checked="cbTRANSPORTparmFile_Checked" Width="151" Unchecked="cbTRANSPORTparmFile_Unchecked"/>
             </ListBox>
             <Label x:Name="lblProjectManager" Content="Project Manager:" HorizontalAlignment="Left" Margin="326,719,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
-            <TextBox x:Name="txtProjectManager" HorizontalAlignment="Left" Height="26" Margin="460,719,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" BorderThickness="0,0,0,1">
+            <TextBox x:Name="txtProjectManager" HorizontalAlignment="Left" Height="39" Margin="460,706,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" BorderThickness="0,0,0,1">
                 <TextBox.BorderBrush>
                     <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                         <GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -129,7 +137,7 @@
                 </TextBox.BorderBrush>
             </TextBox>
             <Label x:Name="lblCompletionDate" Content="Completion Date:" HorizontalAlignment="Left" Margin="326,787,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
-            <TextBox x:Name="txtCompletionDate" HorizontalAlignment="Left" Height="26" Margin="465,787,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" BorderThickness="0,0,0,1">
+            <TextBox x:Name="txtCompletionDate" HorizontalAlignment="Left" Height="44" Margin="465,769,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" BorderThickness="0,0,0,1">
                 <TextBox.BorderBrush>
                     <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                         <GradientStop Color="#FFABADB3" Offset="0.05"/>

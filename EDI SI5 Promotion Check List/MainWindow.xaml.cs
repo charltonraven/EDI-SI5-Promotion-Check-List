@@ -66,6 +66,10 @@ namespace EDI_SI5_Promotion_Check_List
         {
             InitializeComponent();
         }
+        public MainWindow(String filename)
+        {
+            InitializeComponent();
+        }
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
@@ -79,7 +83,7 @@ namespace EDI_SI5_Promotion_Check_List
             String[] lineTitles = {"User:","Partner:","Date:","Change Management Request Number:", "User Approval of Project:", "Partner Approval of Initial Project:", "Table/Parm Update:", "Development Completed:", "Testing Completed:", "Code Review/Check Sign Off:", "Key User Signoff:", "Partner Signoff:", "Implementation Final Status:", "Post Implementation Review:", "Envelopes:", "Business Process:", "Service Adapters:", "Perl Scirpts:", "Email Code List:", "Document Maps:", "Document Extraction Map:", "XSLT Email Error Header:", "Map Code Tables:", "RAILS csv Table:", "RAILS csv Record:", "RAILS csv Filter:", "File Structure in Production:", "FTP Connect:", "TRANSPORT Parm File" };
             String[] lineAnswers = { User, Partner, currentDate, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(),developementCompleted.ToString(),testingCompleted.ToString(),codeReview.ToString(),keyUserSignOff.ToString(),partnerSignOff.ToString(),impFinalStatus,PostImpReview,Envelopes.ToString(),BP.ToString(),ServiceAdapters.ToString(),perlScripts.ToString(),EmailCodeList.ToString(),docMaps.ToString(),docExtractionMap.ToString(),XSLTEmail.ToString(),mapCodeTables.ToString(),RAILStable.ToString(),RAILSrecord.ToString(),RAILSfilter.ToString(),fileStructureProd.ToString(),FTPconnect.ToString(),TRANSPORTfile.ToString() };
             String filename = User + "_" + Partner + "_"+DateTime.Now.ToString("yyyyMMddHHmm");
-            String filePath= @"c:\users\raven\desktop\" + filename+".arc";
+            String filePath= @"c:\users\63530\desktop\" + filename+".arc";
             System.IO.File.WriteAllLines(filePath, lineAnswers);
 
             SendEmailForApproval(filePath);
@@ -386,13 +390,13 @@ namespace EDI_SI5_Promotion_Check_List
         }
         public void SendEmailForApproval(String FilePath)
         {
-            MailMessage mail = new MailMessage("williamscharlton@hotmail.com", "williamscharlton71@gmail.com");
+            MailMessage mail = new MailMessage("williamscharlton@hotmail.com", "Charlton.williams@sonoco.com");
             SmtpClient client = new SmtpClient();
-            client.Port = 587;
+            client.Port = 25;
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
             client.UseDefaultCredentials = false;
-            client.EnableSsl = true;
-            client.Host = "smtp.gmail.com";
+            client.EnableSsl = false;
+            client.Host = "10.77.48.132";
             mail.Subject = "test";
             mail.Body = "body test";
             mail.Attachments.Add(new Attachment(FilePath));

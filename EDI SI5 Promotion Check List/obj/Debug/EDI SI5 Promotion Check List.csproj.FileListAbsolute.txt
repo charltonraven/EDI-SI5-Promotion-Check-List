@@ -26,3 +26,7 @@ C:\Users\raven\GitCraken\CheckList\EDI SI5 Promotion Check List\obj\Debug\EDI_SI
 C:\Users\raven\GitCraken\CheckList\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.csproj.GenerateResource.Cache
 C:\Users\raven\GitCraken\CheckList\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.exe
 C:\Users\raven\GitCraken\CheckList\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.pdb
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.exe.manifest
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.application
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.exe.manifest
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.application
