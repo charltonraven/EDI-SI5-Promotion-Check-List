@@ -90,7 +90,7 @@
                 </TextBox.BorderBrush>
             </TextBox>
             <Label x:Name="lblCodeReviewBY" Content="by:" HorizontalAlignment="Left" Margin="409,408,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
-            <TextBox x:Name="txtCodeReviewBY" HorizontalAlignment="Left" Height="46" Margin="450,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" BorderThickness="0,0,0,1">
+            <TextBox x:Name="txtCodeReviewBY" HorizontalAlignment="Left" Height="46" Margin="450,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" BorderThickness="0,0,0,1" TextChanged="txtCodeReviewBY_TextChanged">
                 <TextBox.BorderBrush>
                     <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                         <GradientStop Color="#FFABADB3" Offset="0.05"/>

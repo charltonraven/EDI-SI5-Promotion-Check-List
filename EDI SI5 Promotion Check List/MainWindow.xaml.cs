@@ -60,6 +60,8 @@ namespace EDI_SI5_Promotion_Check_List
         String CompletionDate;
         String sendTo;
 
+        private List<String> attachments = new List<string>();
+
 
       
         public MainWindow()
@@ -80,13 +82,9 @@ namespace EDI_SI5_Promotion_Check_List
             codeReviewBY = txtCodeReviewBY.Text;
             codeReviewDate = txtCheckSignOffDate.Text;
 
-            String[] lineTitles = { "Status","User", "Partner", "Date", "ChangeManagementRequestNumber", "UserApprovalofProject", "PartnerApprovalofInitialProject", "Table/ParmUpdate", "Table/ParmName", "DevelopmentCompleted", "TestingCompleted", "CodeReview/CheckSignOff", "KeyUserSignoff", "PartnerSignoff", "ImplementationFinalStatus", "PostImplementationReview", "Envelopes", "BusinessProcess", "ServiceAdapters", "PerlScripts", "EmailCodeList", "DocumentMaps", "DocumentExtractionMap", "XSLTEmailErrorHeader", "MapCodeTables", "RAILScsvTable", "RAILScsvRecord", "RAILScsvFilter", "FileStructureinProduction", "FTPConnect", "TRANSPORTParmFile" };
-            String[] lineAnswers = { "Needs Approval",User, Partner, currentDate, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(), tableParmName,developementCompleted.ToString(),testingCompleted.ToString(),codeReview.ToString(),keyUserSignOff.ToString(),partnerSignOff.ToString(),impFinalStatus,PostImpReview,Envelopes.ToString(),BP.ToString(),ServiceAdapters.ToString(),perlScripts.ToString(),EmailCodeList.ToString(),docMaps.ToString(),docExtractionMap.ToString(),XSLTEmail.ToString(),mapCodeTables.ToString(),RAILStable.ToString(),RAILSrecord.ToString(),RAILSfilter.ToString(),fileStructureProd.ToString(),FTPconnect.ToString(),TRANSPORTfile.ToString() };
-            String filename = User + "_" + Partner + "_"+DateTime.Now.ToString("yyyyMMddHHmm");
-          //  String filePath= @"c:\users\63530\desktop\" + filename+".arc";
-          //  System.IO.File.WriteAllLines(filePath, lineAnswers);
-
-           // SendEmailForApproval(filePath);
+            String[] lineTitles = { "Status","User", "Partner", "Date", "ChangeManagementRequestNumber", "UserApprovalofProject", "PartnerApprovalofInitialProject", "Table/ParmUpdate", "Table/ParmName", "DevelopmentCompleted", "TestingCompleted", "CodeReview/CheckSignOff","CodeReviewBy","CodeReviewDate", "KeyUserSignoff", "PartnerSignoff", "ImplementationFinalStatus", "PostImplementationReview", "Envelopes", "BusinessProcess", "ServiceAdapters", "PerlScripts", "EmailCodeList", "DocumentMaps", "DocumentExtractionMap", "XSLTEmailErrorHeader", "MapCodeTables", "RAILScsvTable", "RAILScsvRecord", "RAILScsvFilter", "FileStructureinProduction", "FTPConnect", "TRANSPORTParmFile" };
+            String[] lineAnswers = { "Needs Approval", User, Partner, currentDate, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(), tableParmName, developementCompleted.ToString(), testingCompleted.ToString(), codeReview.ToString(), codeReviewBY,codeReviewDate, keyUserSignOff.ToString(),partnerSignOff.ToString(),impFinalStatus,PostImpReview,Envelopes.ToString(),BP.ToString(),ServiceAdapters.ToString(),perlScripts.ToString(),EmailCodeList.ToString(),docMaps.ToString(),docExtractionMap.ToString(),XSLTEmail.ToString(),mapCodeTables.ToString(),RAILStable.ToString(),RAILSrecord.ToString(),RAILSfilter.ToString(),fileStructureProd.ToString(),FTPconnect.ToString(),TRANSPORTfile.ToString() };
+          //  String filename = User + "_" + Partner + "_"+DateTime.Now.ToString("yyyyMMddHHmm");
             SendEmailForApproval(lineTitles,lineAnswers);
 
 
@@ -242,6 +240,7 @@ namespace EDI_SI5_Promotion_Check_List
         private void cbEnvelopes_Checked(object sender, RoutedEventArgs e)
         {
             Envelopes = true;
+            
         }
 
         private void cbEnvelopes_Unchecked(object sender, RoutedEventArgs e)
@@ -251,6 +250,8 @@ namespace EDI_SI5_Promotion_Check_List
         private void cbBusinessProcesses_Checked(object sender, RoutedEventArgs e)
         {
             BP = true;
+            String attachment = OpenFileDialog();
+            attachments.Add(attachment);
 
         }
 
@@ -272,6 +273,8 @@ namespace EDI_SI5_Promotion_Check_List
         private void cbPerlScripts_Checked(object sender, RoutedEventArgs e)
         {
             perlScripts = true;
+            String attachment = OpenFileDialog();
+            attachments.Add(attachment);
         }
 
         private void cbPerlScripts_Unchecked(object sender, RoutedEventArgs e)
@@ -321,6 +324,8 @@ namespace EDI_SI5_Promotion_Check_List
         private void cbMapCodeTables_Checked(object sender, RoutedEventArgs e)
         {
             mapCodeTables = true;
+            String attachment = OpenFileDialog();
+            attachments.Add(attachment);
         }
 
         private void cbMapCodeTables_Unchecked(object sender, RoutedEventArgs e)
@@ -382,6 +387,8 @@ namespace EDI_SI5_Promotion_Check_List
         private void cbTRANSPORTparmFile_Checked(object sender, RoutedEventArgs e)
         {
             TRANSPORTfile = true;
+            String attachment = OpenFileDialog();
+            attachments.Add(attachment);
         }
 
         private void cbTRANSPORTparmFile_Unchecked(object sender, RoutedEventArgs e)
@@ -399,7 +406,7 @@ namespace EDI_SI5_Promotion_Check_List
             client.Host = "10.77.48.132";
             mail.Subject = "test";
             mail.Body = "body test";
-            mail.Attachments.Add(new Attachment(FilePath));
+           // mail.attachments.Add(new Attachment(FilePath));
             client.Send(mail);
         }
         public void SendEmailForApproval(String [] lineTitles, String  [] lineAnswers)
@@ -414,6 +421,12 @@ namespace EDI_SI5_Promotion_Check_List
             String body = stringbuilder.ToString();
 
             MailMessage mail = new MailMessage("williamscharlton@hotmail.com", "Charlton.williams@sonoco.com");
+
+            for(int i = 0; i < attachments.Count; i++)
+            {
+                mail.Attachments.Add(new Attachment(attachments[i]));
+            }
+
             SmtpClient client = new SmtpClient();
             client.Port = 25;
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
@@ -424,6 +437,27 @@ namespace EDI_SI5_Promotion_Check_List
             mail.Body = body;
             client.Send(mail);
 
+        }
+
+        private void txtCodeReviewBY_TextChanged(object sender, TextChangedEventArgs e)
+        {
+           
+        }
+
+        private String OpenFileDialog()
+        {
+
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+
+
+            Nullable<bool> result = dlg.ShowDialog();
+
+            if (result == true)
+            {
+                return dlg.FileName;
+            }
+            return null;
         }
     }
 }

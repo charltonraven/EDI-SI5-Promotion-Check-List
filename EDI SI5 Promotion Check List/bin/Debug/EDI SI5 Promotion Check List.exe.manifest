@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EDI SI5 Promotion Check List.exe" size="36272">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EDI SI5 Promotion Check List.exe" size="36816">
       <assemblyIdentity name="EDI SI5 Promotion Check List" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kMUW9u1i3uwrFSOCFYvBKarLVFz6kkU8a3bfasMRvLg=</dsig:DigestValue>
+        <dsig:DigestValue>IL3N0skjNLUDNjk2+wcGb1PmBlBg89riv5qyBtK0Bas=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
