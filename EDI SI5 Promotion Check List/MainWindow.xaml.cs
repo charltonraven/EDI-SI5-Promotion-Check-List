@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net.Mail;
+using System.IO;
+using EDI_SI5_Promotion_Check_List.Properties;
 
 namespace EDI_SI5_Promotion_Check_List
 {
@@ -81,11 +83,16 @@ namespace EDI_SI5_Promotion_Check_List
             tableParmName = txtTableParmName.Text;
             codeReviewBY = txtCodeReviewBY.Text;
             codeReviewDate = txtCheckSignOffDate.Text;
+            ProjectManager = txtProjectManager.Text;
 
-            String[] lineTitles = { "Status","User", "Partner", "Date", "ChangeManagementRequestNumber", "UserApprovalofProject", "PartnerApprovalofInitialProject", "Table/ParmUpdate", "Table/ParmName", "DevelopmentCompleted", "TestingCompleted", "CodeReview/CheckSignOff","CodeReviewBy","CodeReviewDate", "KeyUserSignoff", "PartnerSignoff", "ImplementationFinalStatus", "PostImplementationReview", "Envelopes", "BusinessProcess", "ServiceAdapters", "PerlScripts", "EmailCodeList", "DocumentMaps", "DocumentExtractionMap", "XSLTEmailErrorHeader", "MapCodeTables", "RAILScsvTable", "RAILScsvRecord", "RAILScsvFilter", "FileStructureinProduction", "FTPConnect", "TRANSPORTParmFile" };
-            String[] lineAnswers = { "Needs Approval", User, Partner, currentDate, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(), tableParmName, developementCompleted.ToString(), testingCompleted.ToString(), codeReview.ToString(), codeReviewBY,codeReviewDate, keyUserSignOff.ToString(),partnerSignOff.ToString(),impFinalStatus,PostImpReview,Envelopes.ToString(),BP.ToString(),ServiceAdapters.ToString(),perlScripts.ToString(),EmailCodeList.ToString(),docMaps.ToString(),docExtractionMap.ToString(),XSLTEmail.ToString(),mapCodeTables.ToString(),RAILStable.ToString(),RAILSrecord.ToString(),RAILSfilter.ToString(),fileStructureProd.ToString(),FTPconnect.ToString(),TRANSPORTfile.ToString() };
-          //  String filename = User + "_" + Partner + "_"+DateTime.Now.ToString("yyyyMMddHHmm");
-            SendEmailForApproval(lineTitles,lineAnswers);
+            String[] lineTitles = {"User", "Partner", "Date", "ChangeManagementRequestNumber", "UserApprovalofProject", "PartnerApprovalofInitialProject", "Table/ParmUpdate", "Table/ParmName", "DevelopmentCompleted", "TestingCompleted", "CodeReview/CheckSignOff","CodeReviewBy","CodeReviewDate", "KeyUserSignoff", "PartnerSignoff", "ImplementationFinalStatus", "PostImplementationReview", "Envelopes", "BusinessProcess", "ServiceAdapters", "PerlScripts", "EmailCodeList", "DocumentMaps", "DocumentExtractionMap", "XSLTEmailErrorHeader", "MapCodeTables", "RAILScsvTable", "RAILScsvRecord", "RAILScsvFilter", "FileStructureinProduction", "FTPConnect", "TRANSPORTParmFile","ProjectManager" };
+            String[] lineAnswers = {User, Partner, currentDate, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(), tableParmName, developementCompleted.ToString(), testingCompleted.ToString(), codeReview.ToString(), codeReviewBY,codeReviewDate, keyUserSignOff.ToString(),partnerSignOff.ToString(),impFinalStatus,PostImpReview,Envelopes.ToString(),BP.ToString(),ServiceAdapters.ToString(),perlScripts.ToString(),EmailCodeList.ToString(),docMaps.ToString(),docExtractionMap.ToString(),XSLTEmail.ToString(),mapCodeTables.ToString(),RAILStable.ToString(),RAILSrecord.ToString(),RAILSfilter.ToString(),fileStructureProd.ToString(),FTPconnect.ToString(),TRANSPORTfile.ToString(),ProjectManager };
+            //  String filename = User + "_" + Partner + "_"+DateTime.Now.ToString("yyyyMMddHHmm");
+             SendEmailForApproval(lineTitles,lineAnswers);
+            // testingBitmap();
+
+
+            System.Windows.Application.Current.Shutdown();
 
 
         }
@@ -397,6 +404,9 @@ namespace EDI_SI5_Promotion_Check_List
         }
         public void SendEmailForApproval(String FilePath)
         {
+
+
+
             MailMessage mail = new MailMessage("williamscharlton@hotmail.com", "Charlton.williams@sonoco.com");
             SmtpClient client = new SmtpClient();
             client.Port = 25;
@@ -411,6 +421,11 @@ namespace EDI_SI5_Promotion_Check_List
         }
         public void SendEmailForApproval(String [] lineTitles, String  [] lineAnswers)
         {
+
+          
+           
+
+
             StringBuilder stringbuilder = new StringBuilder();
 
             for(int i = 0; i < lineTitles.Length; i++)
@@ -433,8 +448,26 @@ namespace EDI_SI5_Promotion_Check_List
             client.UseDefaultCredentials = false;
             client.EnableSsl = false;
             client.Host = "10.77.48.132";
-            mail.Subject = "test";
+            mail.Subject = ProjectManager + " Needs Approval for Project!!! User: " + User + " and Partner " + Partner;
             mail.Body = body;
+
+            Window c = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
+            int width = (int)c.ActualWidth;
+            int height = (int)c.ActualHeight;
+            RenderTargetBitmap render = new RenderTargetBitmap(width, height, 90, 90, PixelFormats.Pbgra32);
+            render.Render(c);
+            PngBitmapEncoder pngImage = new PngBitmapEncoder();
+            pngImage.Frames.Add(BitmapFrame.Create(render));
+
+
+            var streamt = new MemoryStream();
+            pngImage.Save(streamt);
+            streamt.Position = 0;
+
+            mail.Attachments.Add(new Attachment(streamt, "image.png"));
+
+
+
             client.Send(mail);
 
         }
@@ -458,6 +491,44 @@ namespace EDI_SI5_Promotion_Check_List
                 return dlg.FileName;
             }
             return null;
+        }
+
+        private void testingBitmap()
+        {
+            MailMessage mail = new MailMessage("williamscharlton@hotmail.com", "Charlton.williams@sonoco.com");
+            SmtpClient client = new SmtpClient();
+            client.Port = 25;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.UseDefaultCredentials = false;
+            client.EnableSsl = false;
+            client.Host = "10.77.48.132";
+            mail.Subject = ProjectManager+" Needs Approval for porject: "+ User + " and  "+ Partner;
+            mail.Body = "yooooo";
+
+            Window c = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
+            int width = (int)c.ActualWidth;
+            int height = (int)c.ActualHeight;
+            RenderTargetBitmap render = new RenderTargetBitmap(width, height, 90, 90, PixelFormats.Pbgra32);
+            render.Render(c);
+            PngBitmapEncoder pngImage = new PngBitmapEncoder();
+            pngImage.Frames.Add(BitmapFrame.Create(render));
+
+            var streamt = new MemoryStream();
+            pngImage.Save(streamt);
+            streamt.Position = 0;
+
+            mail.Attachments.Add(new Attachment(streamt, "image.png"));
+
+
+
+            client.Send(mail);
+
+            
+          
+
+            
+
+
         }
     }
 }

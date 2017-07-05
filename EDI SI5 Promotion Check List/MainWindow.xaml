@@ -13,9 +13,13 @@
         ScrollViewer.CanContentScroll="True"
         AutomationProperties.IsOffscreenBehavior="Onscreen"
         ScrollViewer.HorizontalScrollBarVisibility="Visible"
-        Loaded="formMain_loaded" d:DesignWidth="958">
-    <ScrollViewer>
+        Loaded="formMain_loaded" d:DesignWidth="958" ResizeMode="NoResize">
+    <ScrollViewer Foreground="#FF517A91" Margin="0,0,0,1">
         <Grid x:Name="lblUserApproval" VerticalAlignment="Center" Height="1001" Width="910">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="960*"/>
+                <RowDefinition Height="41*"/>
+            </Grid.RowDefinitions>
             <Label x:Name="lblUser" Content="User:" HorizontalAlignment="Left" Margin="24,44,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
             <TextBox x:Name="txtUser" HorizontalAlignment="Left" Height="36" Margin="87,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191" BorderThickness="0,0,0,1">
                 <TextBox.BorderBrush>
@@ -109,7 +113,7 @@
                     </LinearGradientBrush>
                 </TextBox.BorderBrush>
             </TextBox>
-            <ListBox HorizontalAlignment="Left" Height="262" Margin="76,706,0,0" VerticalAlignment="Top" Width="245" Padding="0">
+            <ListBox HorizontalAlignment="Left" Height="262" Margin="24,688,0,0" VerticalAlignment="Top" Width="234" Padding="0">
                 <CheckBox x:Name="cbEnvelopes" Content="Envelopes" FontSize="14" FontFamily="Lucida Fax" Checked="cbEnvelopes_Checked" Unchecked="cbEnvelopes_Unchecked"/>
                 <CheckBox x:Name="cbBusinessProcesses" Content="Business Processes" FontSize="14" FontFamily="Lucida Fax" Unchecked="cbBusinessProcesses_Unchecked" Checked="cbBusinessProcesses_Checked"/>
                 <CheckBox x:Name="cbServiceAdapters" Content="Service Adapters" FontSize="14" FontFamily="Lucida Fax" Checked="cbServiceAdapters_Checked" Unchecked="cbServiceAdapters_Unchecked"/>
@@ -124,7 +128,7 @@
                 <CheckBox x:Name="cbRAILS_csv_Filter" Content="RAILS csv Filter" FontSize="14" FontFamily="Lucida Fax" Checked="cbRAILS_csv_Filter_Checked" Unchecked="cbRAILS_csv_Filter_Unchecked"/>
                 <CheckBox x:Name="cbFile_Structure_in_prodcution" Content="File Structure in prodcution" FontSize="14" FontFamily="Lucida Fax" Checked="cbFile_Structure_in_prodcution_Checked" Unchecked="cbFile_Structure_in_prodcution_Unchecked"/>
                 <CheckBox x:Name="cbFTPConnect" Content="FTP Connect" FontSize="14" FontFamily="Lucida Fax" Checked="cbFTPConnect_Checked" Unchecked="cbFTPConnect_Unchecked"/>
-                <CheckBox x:Name="cbTRANSPORTparmFile" Content="TRANSPORT Parm File" FontSize="14" FontFamily="Lucida Fax" Checked="cbTRANSPORTparmFile_Checked" Width="151" Unchecked="cbTRANSPORTparmFile_Unchecked"/>
+                <CheckBox x:Name="cbTRANSPORTparmFile" Content="TRANSPORT Parm File" FontSize="14" FontFamily="Lucida Fax" Checked="cbTRANSPORTparmFile_Checked" Width="189" Unchecked="cbTRANSPORTparmFile_Unchecked"/>
             </ListBox>
             <Label x:Name="lblProjectManager" Content="Project Manager:" HorizontalAlignment="Left" Margin="326,719,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
             <TextBox x:Name="txtProjectManager" HorizontalAlignment="Left" Height="39" Margin="460,706,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" BorderThickness="0,0,0,1">

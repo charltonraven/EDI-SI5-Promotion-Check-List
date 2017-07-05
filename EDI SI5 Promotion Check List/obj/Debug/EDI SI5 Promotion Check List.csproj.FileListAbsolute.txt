@@ -1,17 +1,3 @@
-c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.exe.config
-c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.exe
-c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.pdb
-c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.csprojResolveAssemblyReference.cache
-c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\MainWindow.g.cs
-c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\App.g.cs
-c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List_MarkupCompile.cache
-c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List_MarkupCompile.lref
-c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\MainWindow.baml
-c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.g.resources
-c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI_SI5_Promotion_Check_List.Properties.Resources.resources
-c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.csproj.GenerateResource.Cache
-c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.exe
-c:\users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.pdb
 C:\Users\raven\GitCraken\CheckList\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.exe.config
 C:\Users\raven\GitCraken\CheckList\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.exe
 C:\Users\raven\GitCraken\CheckList\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.pdb
@@ -26,10 +12,6 @@ C:\Users\raven\GitCraken\CheckList\EDI SI5 Promotion Check List\obj\Debug\EDI_SI
 C:\Users\raven\GitCraken\CheckList\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.csproj.GenerateResource.Cache
 C:\Users\raven\GitCraken\CheckList\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.exe
 C:\Users\raven\GitCraken\CheckList\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.pdb
-C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.exe.manifest
-C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.application
-C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.exe.manifest
-C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.application
 C:\Users\raven\GitCraken\EDI-SI5-Promotion-Check-List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.exe.config
 C:\Users\raven\GitCraken\EDI-SI5-Promotion-Check-List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.exe.manifest
 C:\Users\raven\GitCraken\EDI-SI5-Promotion-Check-List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.application
@@ -48,3 +30,21 @@ C:\Users\raven\GitCraken\EDI-SI5-Promotion-Check-List\EDI SI5 Promotion Check Li
 C:\Users\raven\GitCraken\EDI-SI5-Promotion-Check-List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.application
 C:\Users\raven\GitCraken\EDI-SI5-Promotion-Check-List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.exe
 C:\Users\raven\GitCraken\EDI-SI5-Promotion-Check-List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.pdb
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\MainWindow.g.cs
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\App.g.cs
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List_MarkupCompile.cache
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List_MarkupCompile.lref
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.exe.config
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.exe.manifest
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.application
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.exe
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.pdb
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.csprojResolveAssemblyReference.cache
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\MainWindow.baml
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.g.resources
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI_SI5_Promotion_Check_List.Properties.Resources.resources
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.csproj.GenerateResource.Cache
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.exe.manifest
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.application
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.exe
+C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.pdb
