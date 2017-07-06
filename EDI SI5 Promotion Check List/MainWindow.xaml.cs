@@ -24,48 +24,12 @@ namespace EDI_SI5_Promotion_Check_List
     public partial class MainWindow : Window
 
     {
-        String User;
-        String Partner;
+        String User,Partner,CMRN,tableParmName, codeReviewBY, codeReviewDate,impFinalStatus,PostImpReview,ProjectManager, CompletionDate, sendTo, Description, Title;
         String currentDate = DateTime.Today.ToShortDateString();
-        String CMRN;
-        bool UAOP;
-        bool PAOIP;
-        bool tableParm;
-        String tableParmName;
-        bool developementCompleted;
-        bool testingCompleted;
-        bool codeReview;
-        String codeReviewBY;
-        String codeReviewDate;
-        bool keyUserSignOff;
-        bool partnerSignOff;
-        String impFinalStatus;
-        String PostImpReview;
-
-        bool Envelopes;
-        bool BP;
-        bool ServiceAdapters;
-        bool perlScripts;
-        bool EmailCodeList;
-        bool docMaps;
-        bool docExtractionMap;
-        bool XSLTEmail;
-        bool mapCodeTables;
-        bool RAILStable;
-        bool RAILSrecord;
-        bool RAILSfilter;
-        bool fileStructureProd;
-        bool FTPconnect;
-        bool TRANSPORTfile;
-
-        String ProjectManager;
-        String CompletionDate;
-        String sendTo;
-
+        bool UAOP,PAOIP,tableParm, developementCompleted, testingCompleted,codeReview, keyUserSignOff, partnerSignOff,Envelopes,BP,ServiceAdapters,perlScripts,EmailCodeList,docMaps,docExtractionMap,XSLTEmail;
+        bool mapCodeTables, RAILStable, RAILSrecord, RAILSfilter, fileStructureProd, FTPconnect, TRANSPORTfile;
         private List<String> attachments = new List<string>();
 
-
-      
         public MainWindow()
         {
             InitializeComponent();
@@ -84,9 +48,11 @@ namespace EDI_SI5_Promotion_Check_List
             codeReviewBY = txtCodeReviewBY.Text;
             codeReviewDate = txtCheckSignOffDate.Text;
             ProjectManager = txtProjectManager.Text;
+            Description = txtDescription.Text;
+            Title = txtTitle.Text;
 
-            String[] lineTitles = {"User", "Partner", "Date", "ChangeManagementRequestNumber", "UserApprovalofProject", "PartnerApprovalofInitialProject", "Table/ParmUpdate", "Table/ParmName", "DevelopmentCompleted", "TestingCompleted", "CodeReview/CheckSignOff","CodeReviewBy","CodeReviewDate", "KeyUserSignoff", "PartnerSignoff", "ImplementationFinalStatus", "PostImplementationReview", "Envelopes", "BusinessProcess", "ServiceAdapters", "PerlScripts", "EmailCodeList", "DocumentMaps", "DocumentExtractionMap", "XSLTEmailErrorHeader", "MapCodeTables", "RAILScsvTable", "RAILScsvRecord", "RAILScsvFilter", "FileStructureinProduction", "FTPConnect", "TRANSPORTParmFile","ProjectManager" };
-            String[] lineAnswers = {User, Partner, currentDate, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(), tableParmName, developementCompleted.ToString(), testingCompleted.ToString(), codeReview.ToString(), codeReviewBY,codeReviewDate, keyUserSignOff.ToString(),partnerSignOff.ToString(),impFinalStatus,PostImpReview,Envelopes.ToString(),BP.ToString(),ServiceAdapters.ToString(),perlScripts.ToString(),EmailCodeList.ToString(),docMaps.ToString(),docExtractionMap.ToString(),XSLTEmail.ToString(),mapCodeTables.ToString(),RAILStable.ToString(),RAILSrecord.ToString(),RAILSfilter.ToString(),fileStructureProd.ToString(),FTPconnect.ToString(),TRANSPORTfile.ToString(),ProjectManager };
+            String[] lineTitles = {"User", "Partner", "Date", "Title", "ChangeManagementRequestNumber", "UserApprovalofProject", "PartnerApprovalofInitialProject", "Table/ParmUpdate", "Table/ParmName", "DevelopmentCompleted", "TestingCompleted", "CodeReview/CheckSignOff","CodeReviewBy","CodeReviewDate", "KeyUserSignoff", "PartnerSignoff", "ImplementationFinalStatus", "PostImplementationReview", "Envelopes", "BusinessProcess", "ServiceAdapters", "PerlScripts", "EmailCodeList", "DocumentMaps", "DocumentExtractionMap", "XSLTEmailErrorHeader", "MapCodeTables", "RAILScsvTable", "RAILScsvRecord", "RAILScsvFilter", "FileStructureinProduction", "FTPConnect", "TRANSPORTParmFile","Description","ProjectManager" };
+            String[] lineAnswers = {User, Partner, currentDate, Title, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(), tableParmName, developementCompleted.ToString(), testingCompleted.ToString(), codeReview.ToString(), codeReviewBY,codeReviewDate, keyUserSignOff.ToString(),partnerSignOff.ToString(),impFinalStatus,PostImpReview,Envelopes.ToString(),BP.ToString(),ServiceAdapters.ToString(),perlScripts.ToString(),EmailCodeList.ToString(),docMaps.ToString(),docExtractionMap.ToString(),XSLTEmail.ToString(),mapCodeTables.ToString(),RAILStable.ToString(),RAILSrecord.ToString(),RAILSfilter.ToString(),fileStructureProd.ToString(),FTPconnect.ToString(),TRANSPORTfile.ToString(),Description,ProjectManager };
             //  String filename = User + "_" + Partner + "_"+DateTime.Now.ToString("yyyyMMddHHmm");
              SendEmailForApproval(lineTitles,lineAnswers);
             // testingBitmap();
@@ -435,7 +401,7 @@ namespace EDI_SI5_Promotion_Check_List
 
             String body = stringbuilder.ToString();
 
-            MailMessage mail = new MailMessage("williamscharlton@hotmail.com", "Charlton.williams@sonoco.com");
+            MailMessage mail = new MailMessage("charlton.williams@sonoco.com", "Charlton.williams@sonoco.com");
 
             for(int i = 0; i < attachments.Count; i++)
             {

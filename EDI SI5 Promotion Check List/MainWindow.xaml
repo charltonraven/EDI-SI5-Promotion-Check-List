@@ -50,8 +50,8 @@
                     </LinearGradientBrush>
                 </TextBox.BorderBrush>
             </TextBox>
-            <Label x:Name="lblCMRN" Content="Change Management Request Number:" HorizontalAlignment="Left" Margin="65,87,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
-            <TextBox x:Name="txtCMRN" HorizontalAlignment="Left" Height="35" Margin="348,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" BorderThickness="0,0,0,1">
+            <Label x:Name="lblCMRN" Content="Change Management Request Number:" HorizontalAlignment="Left" Margin="344,95,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
+            <TextBox x:Name="txtCMRN" HorizontalAlignment="Left" Height="35" Margin="639,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" BorderThickness="0,0,0,1">
                 <TextBox.BorderBrush>
                     <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                         <GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -130,18 +130,8 @@
                 <CheckBox x:Name="cbFTPConnect" Content="FTP Connect" FontSize="14" FontFamily="Lucida Fax" Checked="cbFTPConnect_Checked" Unchecked="cbFTPConnect_Unchecked"/>
                 <CheckBox x:Name="cbTRANSPORTparmFile" Content="TRANSPORT Parm File" FontSize="14" FontFamily="Lucida Fax" Checked="cbTRANSPORTparmFile_Checked" Width="189" Unchecked="cbTRANSPORTparmFile_Unchecked"/>
             </ListBox>
-            <Label x:Name="lblProjectManager" Content="Project Manager:" HorizontalAlignment="Left" Margin="326,719,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
-            <TextBox x:Name="txtProjectManager" HorizontalAlignment="Left" Height="39" Margin="460,706,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" BorderThickness="0,0,0,1">
-                <TextBox.BorderBrush>
-                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
-                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
-                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
-                        <GradientStop Color="#FF25282B" Offset="1"/>
-                    </LinearGradientBrush>
-                </TextBox.BorderBrush>
-            </TextBox>
-            <Label x:Name="lblCompletionDate" Content="Completion Date:" HorizontalAlignment="Left" Margin="326,787,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
-            <TextBox x:Name="txtCompletionDate" HorizontalAlignment="Left" Height="44" Margin="465,769,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" BorderThickness="0,0,0,1">
+            <Label x:Name="lblProjectManager" Content="Project Manager:" HorizontalAlignment="Left" Margin="312,835,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
+            <TextBox x:Name="txtProjectManager" HorizontalAlignment="Left" Height="39" Margin="450,822,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" BorderThickness="0,0,0,1">
                 <TextBox.BorderBrush>
                     <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                         <GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -151,7 +141,7 @@
                 </TextBox.BorderBrush>
             </TextBox>
             <Button x:Name="btnSend" Content="Send for Approval" HorizontalAlignment="Left" Margin="460,878,0,0" VerticalAlignment="Top" Width="131" FontSize="14" Click="btnSend_Click"/>
-            <GroupBox x:Name="grpSendTo" Header="Send To:&#xD;&#xA;" HorizontalAlignment="Left" Height="87" Margin="658,727,0,0" VerticalAlignment="Top" Width="155" FontSize="14" FontFamily="Lucida Fax">
+            <GroupBox x:Name="grpSendTo" Header="Send To:&#xD;&#xA;" HorizontalAlignment="Left" Height="87" Margin="674,808,0,0" VerticalAlignment="Top" Width="155" FontSize="14" FontFamily="Lucida Fax">
                 <StackPanel HorizontalAlignment="Left" Height="58" Margin="0,-8,-2,0" VerticalAlignment="Top" Width="251">
                     <RadioButton x:Name="rbPJNovak" Content="PJ Novak" FontSize="14" FontFamily="Lucida Fax" Checked="rbPJNovak_Checked"/>
                     <RadioButton x:Name="rbBrianFerger" Content="Brian Ferger" FontSize="14" FontFamily="Lucida Fax" Checked="rbBrianFerger_Checked"/>
@@ -163,6 +153,17 @@
                 <RadioButton x:Name="rbBackedOutPOST" Content="Backed Out" Height="22" VerticalAlignment="Bottom" Width="111" FontSize="14" FontFamily="Lucida Fax" Margin="0,0,0,-1" Checked="rbBackedOutPOST_Checked"/>
                 <RadioButton x:Name="rbAbandonedPOST" Content="Abandoned" Height="19" VerticalAlignment="Top" Width="105" FontSize="14" FontFamily="Lucida Fax" RenderTransformOrigin="0.5,0.5" Checked="rbAbandonedPOST_Checked"/>
             </DockPanel>
+            <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Height="88" Margin="350,672,0,0" TextWrapping="Wrap" Text="Enter Description" VerticalAlignment="Top" Width="459" FontSize="11" SpellCheck.IsEnabled="True" BorderThickness="2"/>
+            <Label x:Name="lblTitle" Content="Title:" HorizontalAlignment="Left" Margin="24,95,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
+            <TextBox x:Name="txtTitle" HorizontalAlignment="Left" Height="36" Margin="87,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239" BorderThickness="0,0,0,1">
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF101111" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
 
         </Grid>
     </ScrollViewer>
