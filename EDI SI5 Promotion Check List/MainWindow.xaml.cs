@@ -33,10 +33,14 @@ namespace EDI_SI5_Promotion_Check_List
         public MainWindow()
         {
             InitializeComponent();
+            txtDescription.TextWrapping = TextWrapping.Wrap;
+            txtDescription.VerticalScrollBarVisibility = ScrollBarVisibility.Visible;
+            txtDescription.AcceptsReturn = true;
         }
         public MainWindow(String filename)
         {
             InitializeComponent();
+            
         }
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
@@ -220,6 +224,12 @@ namespace EDI_SI5_Promotion_Check_List
         {
             Envelopes = false;
         }
+
+        private void txtDescription_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
         private void cbBusinessProcesses_Checked(object sender, RoutedEventArgs e)
         {
             BP = true;

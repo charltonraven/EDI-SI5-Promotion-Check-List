@@ -153,7 +153,7 @@
                 <RadioButton x:Name="rbBackedOutPOST" Content="Backed Out" Height="22" VerticalAlignment="Bottom" Width="111" FontSize="14" FontFamily="Lucida Fax" Margin="0,0,0,-1" Checked="rbBackedOutPOST_Checked"/>
                 <RadioButton x:Name="rbAbandonedPOST" Content="Abandoned" Height="19" VerticalAlignment="Top" Width="105" FontSize="14" FontFamily="Lucida Fax" RenderTransformOrigin="0.5,0.5" Checked="rbAbandonedPOST_Checked"/>
             </DockPanel>
-            <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Height="88" Margin="350,672,0,0" TextWrapping="Wrap" Text="Enter Description" VerticalAlignment="Top" Width="459" FontSize="11" SpellCheck.IsEnabled="True" BorderThickness="2"/>
+            <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Height="88" Margin="350,672,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="459" FontSize="12" SpellCheck.IsEnabled="True" BorderThickness="2" ToolTip="Enter Description" TextChanged="txtDescription_TextChanged"/>
             <Label x:Name="lblTitle" Content="Title:" HorizontalAlignment="Left" Margin="24,95,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax"/>
             <TextBox x:Name="txtTitle" HorizontalAlignment="Left" Height="36" Margin="87,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239" BorderThickness="0,0,0,1">
                 <TextBox.BorderBrush>
