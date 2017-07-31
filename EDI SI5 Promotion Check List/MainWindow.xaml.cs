@@ -26,8 +26,10 @@ namespace EDI_SI5_Promotion_Check_List
     {
         String User,Partner,CMRN,tableParmName, codeReviewBY, codeReviewDate,impFinalStatus,PostImpReview,ProjectManager, CompletionDate, sendTo, Description, Title;
         String currentDate = DateTime.Today.ToShortDateString();
+        String SendFrom;
         bool UAOP,PAOIP,tableParm, developementCompleted, testingCompleted,codeReview, keyUserSignOff, partnerSignOff,Envelopes,BP,ServiceAdapters,perlScripts,EmailCodeList,docMaps,docExtractionMap,XSLTEmail;
         bool mapCodeTables, RAILStable, RAILSrecord, RAILSfilter, fileStructureProd, FTPconnect, TRANSPORTfile;
+        bool BusinessProcessSchedule, ServiceAdapterSchedule, SetPartnerGISStatsTable;
         private List<String> attachments = new List<string>();
 
         public MainWindow()
@@ -54,12 +56,14 @@ namespace EDI_SI5_Promotion_Check_List
             ProjectManager = txtProjectManager.Text;
             Description = txtDescription.Text;
             Title = txtTitle.Text;
+            SendFrom = ProjectManager.Replace(" ", ".") + "@Sonoco.com";
+            
 
-            String[] lineTitles = {"User", "Partner", "Date", "Title", "ChangeManagementRequestNumber", "UserApprovalofProject", "PartnerApprovalofInitialProject", "Table/ParmUpdate", "Table/ParmName", "DevelopmentCompleted", "TestingCompleted", "CodeReview/CheckSignOff","CodeReviewBy","CodeReviewDate", "KeyUserSignoff", "PartnerSignoff", "ImplementationFinalStatus", "PostImplementationReview", "Envelopes", "BusinessProcess", "ServiceAdapters", "PerlScripts", "EmailCodeList", "DocumentMaps", "DocumentExtractionMap", "XSLTEmailErrorHeader", "MapCodeTables", "RAILScsvTable", "RAILScsvRecord", "RAILScsvFilter", "FileStructureinProduction", "FTPConnect", "TRANSPORTParmFile","Description","ProjectManager" };
-            String[] lineAnswers = {User, Partner, currentDate, Title, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(), tableParmName, developementCompleted.ToString(), testingCompleted.ToString(), codeReview.ToString(), codeReviewBY,codeReviewDate, keyUserSignOff.ToString(),partnerSignOff.ToString(),impFinalStatus,PostImpReview,Envelopes.ToString(),BP.ToString(),ServiceAdapters.ToString(),perlScripts.ToString(),EmailCodeList.ToString(),docMaps.ToString(),docExtractionMap.ToString(),XSLTEmail.ToString(),mapCodeTables.ToString(),RAILStable.ToString(),RAILSrecord.ToString(),RAILSfilter.ToString(),fileStructureProd.ToString(),FTPconnect.ToString(),TRANSPORTfile.ToString(),Description,ProjectManager };
-            //  String filename = User + "_" + Partner + "_"+DateTime.Now.ToString("yyyyMMddHHmm");
+            String[] lineTitles = {"User", "Partner", "Date", "Title", "ChangeManagementRequestNumber", "UserApprovalofProject", "PartnerApprovalofInitialProject", "Table/ParmUpdate", "Table/ParmName", "DevelopmentCompleted", "TestingCompleted", "CodeReview/CheckSignOff","CodeReviewBy","CodeReviewDate", "KeyUserSignoff", "PartnerSignoff", "ImplementationFinalStatus", "PostImplementationReview", "Envelopes", "BusinessProcess", "ServiceAdapters", "PerlScripts", "EmailCodeList", "DocumentMaps", "DocumentExtractionMap", "XSLTEmailErrorHeader", "MapCodeTables", "RAILScsvTable", "RAILScsvRecord", "RAILScsvFilter", "FileStructureinProduction", "FTPConnect", "TRANSPORTParmFile","BusinessProcessSchedule","ServiceAdapterSchedule","SetPartnerInGISStatsTable","Description","ProjectManager" };
+            String[] lineAnswers = { User, Partner, currentDate, Title, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(), tableParmName, developementCompleted.ToString(), testingCompleted.ToString(), codeReview.ToString(), codeReviewBY, codeReviewDate, keyUserSignOff.ToString(), partnerSignOff.ToString(), impFinalStatus, PostImpReview, Envelopes.ToString(), BP.ToString(), ServiceAdapters.ToString(), perlScripts.ToString(), EmailCodeList.ToString(), docMaps.ToString(), docExtractionMap.ToString(), XSLTEmail.ToString(), mapCodeTables.ToString(), RAILStable.ToString(), RAILSrecord.ToString(), RAILSfilter.ToString(), fileStructureProd.ToString(), FTPconnect.ToString(), TRANSPORTfile.ToString(), BusinessProcessSchedule.ToString(),ServiceAdapterSchedule.ToString(),SetPartnerGISStatsTable.ToString(),Description,ProjectManager };
+          
              SendEmailForApproval(lineTitles,lineAnswers);
-            // testingBitmap();
+            
 
 
             System.Windows.Application.Current.Shutdown();
@@ -92,6 +96,12 @@ namespace EDI_SI5_Promotion_Check_List
             lblCheckSignOffDate.IsEnabled = false;
             txtTableParmName.IsEnabled = false;
             lblTableParmUpdate.IsEnabled = false;
+            rbAbandonedPOST.IsEnabled = false;
+            rbBackedOutPOST.IsEnabled = false;
+            rbSuccessPOST.IsEnabled = false;
+            cbCodeReview.IsEnabled = false;
+            txtCodeReviewBY.IsEnabled = false;
+            txtCheckSignOffDate.IsEnabled = false;
 
         }
 
@@ -228,6 +238,27 @@ namespace EDI_SI5_Promotion_Check_List
         private void txtDescription_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void Service_Adapter_Schedule_Checked(object sender, RoutedEventArgs e)
+        {
+            ServiceAdapterSchedule = true;
+        }
+
+        private void cbSetPartnerInGISStatsTable_Checked(object sender, RoutedEventArgs e)
+        {
+            SetPartnerGISStatsTable = true;
+        }
+
+        private void txtProjectManager_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void cbBusinessProcessSchedule_Checked(object sender, RoutedEventArgs e)
+        {
+            BusinessProcessSchedule = true;
+            
         }
 
         private void cbBusinessProcesses_Checked(object sender, RoutedEventArgs e)
@@ -411,7 +442,7 @@ namespace EDI_SI5_Promotion_Check_List
 
             String body = stringbuilder.ToString();
 
-            MailMessage mail = new MailMessage("charlton.williams@sonoco.com", "Charlton.williams@sonoco.com");
+            MailMessage mail = new MailMessage(SendFrom, sendTo);
 
             for(int i = 0; i < attachments.Count; i++)
             {
@@ -427,20 +458,20 @@ namespace EDI_SI5_Promotion_Check_List
             mail.Subject = ProjectManager + " Needs Approval for Project!!! User: " + User + " and Partner " + Partner;
             mail.Body = body;
 
-            Window c = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
-            int width = (int)c.ActualWidth;
-            int height = (int)c.ActualHeight;
-            RenderTargetBitmap render = new RenderTargetBitmap(width, height, 90, 90, PixelFormats.Pbgra32);
-            render.Render(c);
-            PngBitmapEncoder pngImage = new PngBitmapEncoder();
-            pngImage.Frames.Add(BitmapFrame.Create(render));
+            //Window c = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
+            //int width = (int)c.ActualWidth;
+            //int height = (int)c.ActualHeight;
+            //RenderTargetBitmap render = new RenderTargetBitmap(width, height, 90, 90, PixelFormats.Pbgra32);
+            //render.Render(c);
+            //PngBitmapEncoder pngImage = new PngBitmapEncoder();
+            //pngImage.Frames.Add(BitmapFrame.Create(render));
 
 
-            var streamt = new MemoryStream();
-            pngImage.Save(streamt);
-            streamt.Position = 0;
+            //var streamt = new MemoryStream();
+            //pngImage.Save(streamt);
+            //streamt.Position = 0;
 
-            mail.Attachments.Add(new Attachment(streamt, "image.png"));
+            //mail.Attachments.Add(new Attachment(streamt, "image.png"));
 
 
 
