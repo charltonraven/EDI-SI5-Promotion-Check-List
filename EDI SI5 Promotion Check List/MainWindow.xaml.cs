@@ -31,6 +31,10 @@ namespace EDI_SI5_Promotion_Check_List
         bool mapCodeTables, RAILStable, RAILSrecord, RAILSfilter, fileStructureProd, FTPconnect, TRANSPORTfile;
         bool BusinessProcessSchedule, ServiceAdapterSchedule, SetPartnerGISStatsTable;
         private List<String> attachments = new List<string>();
+        SortedDictionary<String,String> attachString = new SortedDictionary<String, String>();
+        int EnvelopeCount,ExtraCount, BusinessProccessCount, ServiceAdapterCount, PerlScriptCount, EmailCodeListCount, DocumentMapsCount, DocumentExtractionCount, XSLTCount, MapCodeCount, csvTableCount, RecordCount, csvFilterCount, FileStructureCount, FTPConnectCount, transportCount = 0;
+        StringBuilder sbExtraAttachement;
+        String EmailAddress = "";
 
         public MainWindow()
         {
@@ -47,6 +51,13 @@ namespace EDI_SI5_Promotion_Check_List
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
+            if (sbExtraAttachement != null)
+            {
+                txtDescription.AppendText(sbExtraAttachement.ToString());
+                txtDescription.Text.Replace(Environment.NewLine, ",");
+            }
+            
+
             User = txtUser.Text.ToString();
             Partner = txtPartner.Text.ToString();
             CMRN = txtCMRN.Text;
@@ -56,7 +67,7 @@ namespace EDI_SI5_Promotion_Check_List
             ProjectManager = txtProjectManager.Text;
             Description = txtDescription.Text;
             Title = txtTitle.Text;
-            SendFrom = ProjectManager.Replace(" ", ".") + "@Sonoco.com";
+            SendFrom = EmailAddress;
             
 
             String[] lineTitles = {"User", "Partner", "Date", "Title", "ChangeManagementRequestNumber", "UserApprovalofProject", "PartnerApprovalofInitialProject", "Table/ParmUpdate", "Table/ParmName", "DevelopmentCompleted", "TestingCompleted", "CodeReview/CheckSignOff","CodeReviewBy","CodeReviewDate", "KeyUserSignoff", "PartnerSignoff", "ImplementationFinalStatus", "PostImplementationReview", "Envelopes", "BusinessProcess", "ServiceAdapters", "PerlScripts", "EmailCodeList", "DocumentMaps", "DocumentExtractionMap", "XSLTEmailErrorHeader", "MapCodeTables", "RAILScsvTable", "RAILScsvRecord", "RAILScsvFilter", "FileStructureinProduction", "FTPConnect", "TRANSPORTParmFile","BusinessProcessSchedule","ServiceAdapterSchedule","SetPartnerInGISStatsTable","Description","ProjectManager" };
@@ -177,6 +188,53 @@ namespace EDI_SI5_Promotion_Check_List
             developementCompleted = false;
         }
 
+        private void txtTitle_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void FormUserApproval_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (Settings.Default["ProjectManager"].Equals("")&& Settings.Default["EmailAddress"].Equals(""))
+            {
+                ProjectManager_Name popup = new ProjectManager_Name();
+                var Result = popup.ShowDialog();
+
+                if (Result == true)
+                {
+                    Settings.Default["ProjectManager"] = popup.Name1;
+                    Settings.Default["EmailAddress"] = popup.Email1;
+                    Settings.Default.Save();
+
+                }
+
+                txtProjectManager.Text = Settings.Default["ProjectManager"].ToString();
+                EmailAddress = Settings.Default["EmailAddress"].ToString();
+                txtProjectManager.IsEnabled = false;
+
+
+            }
+            else
+            {
+                txtProjectManager.Text = Settings.Default["ProjectManager"].ToString();
+                EmailAddress = Settings.Default["EmailAddress"].ToString();
+                txtProjectManager.IsEnabled = false;
+            }
+        }
+
+        private void btnAddAttachment_Click(object sender, RoutedEventArgs e)
+        {
+            sbExtraAttachement = new StringBuilder();
+            String attachment = OpenFileDialog();
+            do
+            {
+                ExtraCount = addAttachment("Extra", attachment, ExtraCount);
+                FileInfo file = new FileInfo(attachment);
+                sbExtraAttachement.Append(file.Name+"\n");
+                attachment = OpenFileDialog();
+            } while (attachment != null);
+        }
+
         private void cbTestingComplete_Checked(object sender, RoutedEventArgs e)
         {
             testingCompleted = true;
@@ -265,35 +323,54 @@ namespace EDI_SI5_Promotion_Check_List
         {
             BP = true;
             String attachment = OpenFileDialog();
-            attachments.Add(attachment);
-
+            do {
+                BusinessProccessCount = addAttachment(cbBusinessProcesses.Content.ToString(), attachment, BusinessProccessCount);
+                attachment = OpenFileDialog();
+            } while (attachment!=null);
         }
 
         private void cbBusinessProcesses_Unchecked(object sender, RoutedEventArgs e)
         {
             BP = false;
+            removeAttachment(cbBusinessProcesses.Content.ToString());
+            BusinessProccessCount = 0;
         }
 
         private void cbServiceAdapters_Checked(object sender, RoutedEventArgs e)
         {
             ServiceAdapters = true;
+            String attachment = OpenFileDialog();
+            do
+            {
+                ServiceAdapterCount = addAttachment(cbServiceAdapters.Content.ToString(), attachment, ServiceAdapterCount);
+                attachment = OpenFileDialog();
+            } while (attachment != null);
         }
 
         private void cbServiceAdapters_Unchecked(object sender, RoutedEventArgs e)
         {
             ServiceAdapters = false;
+            removeAttachment(cbServiceAdapters.Content.ToString());
+            ServiceAdapterCount = 0;
         }
 
         private void cbPerlScripts_Checked(object sender, RoutedEventArgs e)
         {
             perlScripts = true;
             String attachment = OpenFileDialog();
-            attachments.Add(attachment);
+            do
+            {
+                PerlScriptCount = addAttachment(cbPerlScripts.Content.ToString(), attachment, PerlScriptCount);
+                attachment = OpenFileDialog();
+
+            } while (attachment != null);
         }
 
         private void cbPerlScripts_Unchecked(object sender, RoutedEventArgs e)
         {
             perlScripts = false;
+            removeAttachment(cbPerlScripts.Content.ToString());
+            PerlScriptCount = 0;
         }
 
         private void cbEmailCodeList_Checked(object sender, RoutedEventArgs e)
@@ -350,6 +427,7 @@ namespace EDI_SI5_Promotion_Check_List
         private void cbRAILS_csv_Table_Checked(object sender, RoutedEventArgs e)
         {
             RAILStable = true;
+            
         }
 
         private void cbRAILS_csv_Table_Unchecked(object sender, RoutedEventArgs e)
@@ -360,6 +438,7 @@ namespace EDI_SI5_Promotion_Check_List
         private void cbRAILS_csv_Record_Checked(object sender, RoutedEventArgs e)
         {
             RAILSrecord = true;
+            
         }
 
         private void cbRAILS_csv_Record_Unchecked(object sender, RoutedEventArgs e)
@@ -370,6 +449,7 @@ namespace EDI_SI5_Promotion_Check_List
         private void cbRAILS_csv_Filter_Checked(object sender, RoutedEventArgs e)
         {
             RAILSfilter = true;
+      
 
         }
 
@@ -391,6 +471,7 @@ namespace EDI_SI5_Promotion_Check_List
         private void cbFTPConnect_Checked(object sender, RoutedEventArgs e)
         {
             FTPconnect = true;
+           
         }
 
         private void cbFTPConnect_Unchecked(object sender, RoutedEventArgs e)
@@ -402,30 +483,21 @@ namespace EDI_SI5_Promotion_Check_List
         {
             TRANSPORTfile = true;
             String attachment = OpenFileDialog();
-            attachments.Add(attachment);
+            do
+            {
+                transportCount = addAttachment(cbTRANSPORTparmFile.Content.ToString(), attachment, transportCount);
+                attachment = OpenFileDialog();
+
+            } while (attachment != null);
         }
 
         private void cbTRANSPORTparmFile_Unchecked(object sender, RoutedEventArgs e)
         {
             TRANSPORTfile = false;
+            removeAttachment(cbTRANSPORTparmFile.Content.ToString());
+            PerlScriptCount = 0;
         }
-        public void SendEmailForApproval(String FilePath)
-        {
-
-
-
-            MailMessage mail = new MailMessage("williamscharlton@hotmail.com", "Charlton.williams@sonoco.com");
-            SmtpClient client = new SmtpClient();
-            client.Port = 25;
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.UseDefaultCredentials = false;
-            client.EnableSsl = false;
-            client.Host = "10.77.48.132";
-            mail.Subject = "test";
-            mail.Body = "body test";
-           // mail.attachments.Add(new Attachment(FilePath));
-            client.Send(mail);
-        }
+       
         public void SendEmailForApproval(String [] lineTitles, String  [] lineAnswers)
         {
 
@@ -443,10 +515,11 @@ namespace EDI_SI5_Promotion_Check_List
             String body = stringbuilder.ToString();
 
             MailMessage mail = new MailMessage(SendFrom, sendTo);
+            
 
-            for(int i = 0; i < attachments.Count; i++)
+            foreach (var value in attachString.Values)
             {
-                mail.Attachments.Add(new Attachment(attachments[i]));
+                mail.Attachments.Add(new Attachment(value));
             }
 
             SmtpClient client = new SmtpClient();
@@ -457,22 +530,6 @@ namespace EDI_SI5_Promotion_Check_List
             client.Host = "10.77.48.132";
             mail.Subject = ProjectManager + " Needs Approval for Project!!! User: " + User + " and Partner " + Partner;
             mail.Body = body;
-
-            //Window c = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
-            //int width = (int)c.ActualWidth;
-            //int height = (int)c.ActualHeight;
-            //RenderTargetBitmap render = new RenderTargetBitmap(width, height, 90, 90, PixelFormats.Pbgra32);
-            //render.Render(c);
-            //PngBitmapEncoder pngImage = new PngBitmapEncoder();
-            //pngImage.Frames.Add(BitmapFrame.Create(render));
-
-
-            //var streamt = new MemoryStream();
-            //pngImage.Save(streamt);
-            //streamt.Position = 0;
-
-            //mail.Attachments.Add(new Attachment(streamt, "image.png"));
-
 
 
             client.Send(mail);
@@ -500,42 +557,39 @@ namespace EDI_SI5_Promotion_Check_List
             return null;
         }
 
-        private void testingBitmap()
+        public int addAttachment(String name,String file,int Count)
         {
-            MailMessage mail = new MailMessage("williamscharlton@hotmail.com", "Charlton.williams@sonoco.com");
-            SmtpClient client = new SmtpClient();
-            client.Port = 25;
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.UseDefaultCredentials = false;
-            client.EnableSsl = false;
-            client.Host = "10.77.48.132";
-            mail.Subject = ProjectManager+" Needs Approval for porject: "+ User + " and  "+ Partner;
-            mail.Body = "yooooo";
+            if(attachString.Count > 0)
+            {
+                while (attachString.ContainsKey(name + Count)){
+                    Count++;
+                }
+                attachString.Add(name + Count, file);
 
-            Window c = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
-            int width = (int)c.ActualWidth;
-            int height = (int)c.ActualHeight;
-            RenderTargetBitmap render = new RenderTargetBitmap(width, height, 90, 90, PixelFormats.Pbgra32);
-            render.Render(c);
-            PngBitmapEncoder pngImage = new PngBitmapEncoder();
-            pngImage.Frames.Add(BitmapFrame.Create(render));
+            }
+            else
+            {
+                attachString.Add(name + Count, file);
+                Count = Count + 1;
+            }
+            return Count;
 
-            var streamt = new MemoryStream();
-            pngImage.Save(streamt);
-            streamt.Position = 0;
+        }
 
-            mail.Attachments.Add(new Attachment(streamt, "image.png"));
-
-
-
-            client.Send(mail);
-
-            
+        public void removeAttachment(String name)
+        {
           
+           
+            foreach(var key in attachString.Keys.Reverse())
+            {
+                if (key.Contains(name))
+                {
+                    attachString.Remove(key);
+                }
+            }
 
             
-
-
+            
         }
     }
 }

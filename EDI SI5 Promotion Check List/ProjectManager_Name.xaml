@@ -1,0 +1,17 @@
+﻿<Window x:Name="Window" x:Class="EDI_SI5_Promotion_Check_List.ProjectManager_Name"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EDI_SI5_Promotion_Check_List"
+        mc:Ignorable="d"
+        Title="Settings: Name" Height="300" Width="331.23" Closing="Window_Closing">
+    <Grid Margin="0,0,-8,0">
+        <Label Content="Enter your Name:" HorizontalAlignment="Left" Margin="91,41,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="26" Margin="30,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="257" BorderThickness="0,0,0,2"/>
+        <Button x:Name="btnSubmit" Content="Set Values" HorizontalAlignment="Left" Height="27" Margin="110,222,0,0" VerticalAlignment="Top" Width="78" Click="btnSubmit_Click"/>
+        <Label Content="Enter Your Email Address" HorizontalAlignment="Left" Margin="69,136,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="26" Margin="30,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="257" BorderThickness="0,0,0,2"/>
+
+    </Grid>
+</Window>
