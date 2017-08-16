@@ -175,7 +175,7 @@
                 <CheckBox x:Name="cbSetPartnerInGISStatsTable" Content="Set Partner in GIS Stats Table" FontSize="14" FontFamily="Lucida Fax" Unchecked="cbServiceAdapters_Unchecked" Checked="cbSetPartnerInGISStatsTable_Checked" Height="24" Width="234"/>
             </ListBox>
             <Button Name="btnAddAttachment" Grid.Column="1" Margin="237,639,248,356" BorderThickness="0" Background="{x:Null}" Click="btnAddAttachment_Click">
-                <Image Source="C:\Users\63530\Downloads\attachment.png" Height="22" Width="18" RenderTransformOrigin="0.538,0.5"></Image>
+                <Image Source="Images\attachment.png" Height="22" Width="18" RenderTransformOrigin="0.538,0.5"></Image>
             </Button>
         </Grid>
     </ScrollViewer>

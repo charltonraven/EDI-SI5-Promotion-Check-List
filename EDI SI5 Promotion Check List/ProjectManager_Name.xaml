@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EDI_SI5_Promotion_Check_List"
         mc:Ignorable="d"
-        Title="Settings: Name" Height="300" Width="331.23" Closing="Window_Closing">
+        Title="Settings: Name" Height="300" Width="331.23" Closing="Window_Closing" Loaded="Window_Loaded">
     <Grid Margin="0,0,-8,0">
         <Label Content="Enter your Name:" HorizontalAlignment="Left" Margin="91,41,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="26" Margin="30,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="257" BorderThickness="0,0,0,2"/>
-        <Button x:Name="btnSubmit" Content="Set Values" HorizontalAlignment="Left" Height="27" Margin="110,222,0,0" VerticalAlignment="Top" Width="78" Click="btnSubmit_Click"/>
+        <TextBox x:Name="txtName" TextAlignment="Center" HorizontalAlignment="Left" Height="26" Margin="30,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="257" BorderThickness="0,0,0,2"/>
+        <Button x:Name="btnSubmit" Content="Save" HorizontalAlignment="Left" Height="27" Margin="110,222,0,0" VerticalAlignment="Top" Width="78" Click="btnSubmit_Click"/>
         <Label Content="Enter Your Email Address" HorizontalAlignment="Left" Margin="69,136,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="26" Margin="30,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="257" BorderThickness="0,0,0,2"/>
+        <TextBox x:Name="txtEmail" TextAlignment="Center" HorizontalAlignment="Left" Height="26" Margin="30,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="257" BorderThickness="0,0,0,2"/>
 
     </Grid>
 </Window>

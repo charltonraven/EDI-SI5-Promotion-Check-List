@@ -17,7 +17,6 @@ C:\Users\raven\GitCraken\EDI-SI5-Promotion-Check-List\EDI SI5 Promotion Check Li
 C:\Users\raven\GitCraken\EDI-SI5-Promotion-Check-List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.application
 C:\Users\raven\GitCraken\EDI-SI5-Promotion-Check-List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.exe
 C:\Users\raven\GitCraken\EDI-SI5-Promotion-Check-List\EDI SI5 Promotion Check List\bin\Debug\EDI SI5 Promotion Check List.pdb
-C:\Users\raven\GitCraken\EDI-SI5-Promotion-Check-List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.csprojResolveAssemblyReference.cache
 C:\Users\raven\GitCraken\EDI-SI5-Promotion-Check-List\EDI SI5 Promotion Check List\obj\Debug\MainWindow.g.cs
 C:\Users\raven\GitCraken\EDI-SI5-Promotion-Check-List\EDI SI5 Promotion Check List\obj\Debug\App.g.cs
 C:\Users\raven\GitCraken\EDI-SI5-Promotion-Check-List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List_MarkupCompile.cache
@@ -50,3 +49,5 @@ C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check Lis
 C:\Users\63530\documents\visual studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\EDI SI5 Promotion Check List.pdb
 C:\Users\63530\Documents\Visual Studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\ProjectManager_Name.g.cs
 C:\Users\63530\Documents\Visual Studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\ProjectManager_Name.baml
+C:\Users\raven\GitCraken\EDI-SI5-Promotion-Check-List\EDI SI5 Promotion Check List\obj\Debug\ProjectManager_Name.g.cs
+C:\Users\raven\GitCraken\EDI-SI5-Promotion-Check-List\EDI SI5 Promotion Check List\obj\Debug\ProjectManager_Name.baml
