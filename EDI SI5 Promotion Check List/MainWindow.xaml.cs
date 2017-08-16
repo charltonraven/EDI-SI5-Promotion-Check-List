@@ -68,16 +68,27 @@ namespace EDI_SI5_Promotion_Check_List
             Description = txtDescription.Text;
             Title = txtTitle.Text;
             SendFrom = EmailAddress;
-            
 
-            String[] lineTitles = {"User", "Partner", "Date", "Title", "ChangeManagementRequestNumber", "UserApprovalofProject", "PartnerApprovalofInitialProject", "Table/ParmUpdate", "Table/ParmName", "DevelopmentCompleted", "TestingCompleted", "CodeReview/CheckSignOff","CodeReviewBy","CodeReviewDate", "KeyUserSignoff", "PartnerSignoff", "ImplementationFinalStatus", "PostImplementationReview", "Envelopes", "BusinessProcess", "ServiceAdapters", "PerlScripts", "EmailCodeList", "DocumentMaps", "DocumentExtractionMap", "XSLTEmailErrorHeader", "MapCodeTables", "RAILScsvTable", "RAILScsvRecord", "RAILScsvFilter", "FileStructureinProduction", "FTPConnect", "TRANSPORTParmFile","BusinessProcessSchedule","ServiceAdapterSchedule","SetPartnerInGISStatsTable","Description","ProjectManager" };
-            String[] lineAnswers = { User, Partner, currentDate, Title, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(), tableParmName, developementCompleted.ToString(), testingCompleted.ToString(), codeReview.ToString(), codeReviewBY, codeReviewDate, keyUserSignOff.ToString(), partnerSignOff.ToString(), impFinalStatus, PostImpReview, Envelopes.ToString(), BP.ToString(), ServiceAdapters.ToString(), perlScripts.ToString(), EmailCodeList.ToString(), docMaps.ToString(), docExtractionMap.ToString(), XSLTEmail.ToString(), mapCodeTables.ToString(), RAILStable.ToString(), RAILSrecord.ToString(), RAILSfilter.ToString(), fileStructureProd.ToString(), FTPconnect.ToString(), TRANSPORTfile.ToString(), BusinessProcessSchedule.ToString(),ServiceAdapterSchedule.ToString(),SetPartnerGISStatsTable.ToString(),Description,ProjectManager };
-          
-             SendEmailForApproval(lineTitles,lineAnswers);
-            
+            String Error = Errors();
+            if (Error == null)
+            {
 
 
-            System.Windows.Application.Current.Shutdown();
+
+                String[] lineTitles = { "User", "Partner", "Date", "Title", "ChangeManagementRequestNumber", "UserApprovalofProject", "PartnerApprovalofInitialProject", "Table/ParmUpdate", "Table/ParmName", "DevelopmentCompleted", "TestingCompleted", "CodeReview/CheckSignOff", "CodeReviewBy", "CodeReviewDate", "KeyUserSignoff", "PartnerSignoff", "ImplementationFinalStatus", "PostImplementationReview", "Envelopes", "BusinessProcess", "ServiceAdapters", "PerlScripts", "EmailCodeList", "DocumentMaps", "DocumentExtractionMap", "XSLTEmailErrorHeader", "MapCodeTables", "RAILScsvTable", "RAILScsvRecord", "RAILScsvFilter", "FileStructureinProduction", "FTPConnect", "TRANSPORTParmFile", "BusinessProcessSchedule", "ServiceAdapterSchedule", "SetPartnerInGISStatsTable", "Description", "ProjectManager" };
+                String[] lineAnswers = { User, Partner, currentDate, Title, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(), tableParmName, developementCompleted.ToString(), testingCompleted.ToString(), codeReview.ToString(), codeReviewBY, codeReviewDate, keyUserSignOff.ToString(), partnerSignOff.ToString(), impFinalStatus, PostImpReview, Envelopes.ToString(), BP.ToString(), ServiceAdapters.ToString(), perlScripts.ToString(), EmailCodeList.ToString(), docMaps.ToString(), docExtractionMap.ToString(), XSLTEmail.ToString(), mapCodeTables.ToString(), RAILStable.ToString(), RAILSrecord.ToString(), RAILSfilter.ToString(), fileStructureProd.ToString(), FTPconnect.ToString(), TRANSPORTfile.ToString(), BusinessProcessSchedule.ToString(), ServiceAdapterSchedule.ToString(), SetPartnerGISStatsTable.ToString(), Description, ProjectManager };
+
+                SendEmailForApproval(lineTitles, lineAnswers);
+
+
+
+                System.Windows.Application.Current.Shutdown();
+            }
+            else
+            {
+                Error_SendButton ErrorPopup = new Error_SendButton(Error);
+                ErrorPopup.ShowDialog();
+            }
 
 
         }
@@ -226,13 +237,16 @@ namespace EDI_SI5_Promotion_Check_List
         {
             sbExtraAttachement = new StringBuilder();
             String attachment = OpenFileDialog();
-            do
+            if (attachment != null)
             {
-                ExtraCount = addAttachment("Extra", attachment, ExtraCount);
-                FileInfo file = new FileInfo(attachment);
-                sbExtraAttachement.Append(file.Name+"\n");
-                attachment = OpenFileDialog();
-            } while (attachment != null);
+                do
+                {
+                    ExtraCount = addAttachment("Extra", attachment, ExtraCount);
+                    FileInfo file = new FileInfo(attachment);
+                    sbExtraAttachement.Append(file.Name + "\n");
+                    attachment = OpenFileDialog();
+                } while (attachment != null);
+            }
         }
 
         private void cbTestingComplete_Checked(object sender, RoutedEventArgs e)
@@ -590,6 +604,40 @@ namespace EDI_SI5_Promotion_Check_List
 
             
             
+        }
+
+        public String Errors()
+        {
+
+            StringBuilder sbErrors = new StringBuilder();
+            bool Errors = false;
+            if (User.Equals(""))
+            {
+                sbErrors.AppendLine("**Enter the User**");
+                Errors = true;
+            }
+            if (Partner.Equals(""))
+            {
+                sbErrors.AppendLine("**Enter the Partner**");
+                Errors = true;
+            }
+            if (Title.Equals(""))
+            {
+                sbErrors.AppendLine("**Enter a Title**");
+                Errors = true;
+            }
+            if (sendTo==null)
+            {
+                sbErrors.AppendLine("**Enter the Recipient**");
+                Errors = true;
+            }
+
+            if (Errors == true)
+            {
+                return sbErrors.ToString();
+            }
+
+            return null;
         }
     }
 }

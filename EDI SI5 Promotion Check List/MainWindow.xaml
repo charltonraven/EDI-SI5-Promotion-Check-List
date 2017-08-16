@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:EDI_SI5_Promotion_Check_List"
         mc:Ignorable="d"
         Title="Promotion Check List" 
-        Height="1110" 
+        Height="1048" 
         Width="{Binding SystemParameters.PrimaryScreenWidth}"
         HorizontalContentAlignment="Center"
         FontSize="22" WindowStartupLocation="Manual"
@@ -14,7 +14,7 @@
         AutomationProperties.IsOffscreenBehavior="Onscreen"
         ScrollViewer.HorizontalScrollBarVisibility="Auto"
         Loaded="formMain_loaded" d:DesignWidth="958" ScrollViewer.VerticalScrollBarVisibility="Auto">
-    <ScrollViewer x:Name="formCheckList" Foreground="#FF517A91" Margin="0,0,0,1">
+    <ScrollViewer x:Name="formCheckList" Foreground="#FF517A91" Margin="0,0,0,2">
         <Grid x:Name="FormUserApproval" VerticalAlignment="Center" Height="1070" Width="910" ScrollViewer.VerticalScrollBarVisibility="Auto" Loaded="FormUserApproval_Loaded">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="15*"/>
@@ -174,8 +174,8 @@
                 <CheckBox x:Name="cbServiceAdapterSchedule" Content="Service Adapter Schedule" FontSize="14" FontFamily="Lucida Fax" Unchecked="cbBusinessProcesses_Unchecked" Checked="Service_Adapter_Schedule_Checked"/>
                 <CheckBox x:Name="cbSetPartnerInGISStatsTable" Content="Set Partner in GIS Stats Table" FontSize="14" FontFamily="Lucida Fax" Unchecked="cbServiceAdapters_Unchecked" Checked="cbSetPartnerInGISStatsTable_Checked" Height="24" Width="234"/>
             </ListBox>
-            <Button Name="btnAddAttachment" Grid.Column="1" Margin="237,639,248,356" BorderThickness="0" Background="{x:Null}" Click="btnAddAttachment_Click">
-                <Image Source="Images\attachment.png" Height="22" Width="18" RenderTransformOrigin="0.538,0.5"></Image>
+            <Button Name="btnAddAttachment" Grid.Column="1" Margin="232,639,248,353" BorderThickness="0" Background="{x:Null}" Click="btnAddAttachment_Click">
+                <Image Source="pack://application:,,,/Images/attachment.png"  Height="31" Width="20" RenderTransformOrigin="0.538,0.5"></Image>
             </Button>
         </Grid>
     </ScrollViewer>

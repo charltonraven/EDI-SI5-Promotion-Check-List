@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="EDI SI5 Promotion Check List.exe" version="1.0.0.7" publicKeyToken="e2f411c6d2a61a11" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="EDI SI5 Promotion Check List" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="EDI SI5 Promotion Check List.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EDI SI5 Promotion Check List.exe" size="50640">
+      <assemblyIdentity name="EDI SI5 Promotion Check List" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>b5IKgoKkjxcGGrPDNl2buFS6bQXFIPx/yDGWiRqg/zc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="EDI SI5 Promotion Check List.exe.config" size="1091">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>VGqd9e+jrzSQEDUiZ1Upyg2+/rTwrAqxHow9u/TZcJs=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=SPCDOMN\63530" issuerKeyHash="7c3c19565a406c5f00c299f35103f0462b14b6f5" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>QxUhlS54B7MDRTlT1xokk1HmBaez1ImlqgJ9uV7eYd4=</DigestValue></Reference></SignedInfo><SignatureValue>kKkgw4SUdeChQiuMtxCYIOevQtZEg9I2ruJYbRxsZakyAQmrLJ6UaKBQSV0HyGRRbiuAs5reqkXZvq+ylobksCwhUyOMfrgrvlQKl5Inb5mJ6qjlhIRuDUwWaukM+ZWOhfum6tCKp0xOAWvXemmtLXcvmQVBcK6jQGeC3y1KTMU=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>u0KO9/GsF3F8TdI+s8YRY4g/z7+dqZTN4nE7MW1gZnp/COLY+djCr5+c7V2rv58fm72BAoNQZ06Ucq9wFq11wj1oPf1lK0uKXKmTDeafyXPTfCVdMRY0tH1pNw62Ds288YKYdCTqdTCX7tExT3J8zdPuW6wKZb4jyUVbtAGTlqE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="de61de5eb97d02aaa589d4b3a705e65193241ad753394503b307782e95211543" Description="" Url=""><as:assemblyIdentity name="EDI SI5 Promotion Check List.exe" version="1.0.0.7" publicKeyToken="e2f411c6d2a61a11" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=SPCDOMN\63530</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>2KkCv/i25LeeA9sCKBA6xYDO9G+9fR/z9irLubXkG60=</DigestValue></Reference></SignedInfo><SignatureValue>HYqAi4cdv9RrnWEbSC0p3jKmhsy5JbeBRinxIo6duqQLcDT+I0JI8DkawWvGv4OWyDuzkDcr/6TLWcGoWpxl1JXQuS43PuyBWBMOQ7HJasb/3bIM6HY17ZDHhv9WUoq9Spivu8XbUoof7WGovZTCSTmoOOqmWXpz+/7bDRkZhqU=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>u0KO9/GsF3F8TdI+s8YRY4g/z7+dqZTN4nE7MW1gZnp/COLY+djCr5+c7V2rv58fm72BAoNQZ06Ucq9wFq11wj1oPf1lK0uKXKmTDeafyXPTfCVdMRY0tH1pNw62Ds288YKYdCTqdTCX7tExT3J8zdPuW6wKZb4jyUVbtAGTlqE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBzTCCATagAwIBAgIQER9Z9lXyQYVO7befGvnN1jANBgkqhkiG9w0BAQsFADAlMSMwIQYDVQQDHhoAUwBQAEMARABPAE0ATgBcADYAMwA1ADMAMDAeFw0xNzA0MTIxODQ0MDZaFw0xODA0MTMwMDQ0MDZaMCUxIzAhBgNVBAMeGgBTAFAAQwBEAE8ATQBOAFwANgAzADUAMwAwMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC7Qo738awXcXxN0j6zxhFjiD/Pv52plM3icTsxbWBmen8I4tj52MKvn5ztXau/nx+bvYECg1BnTpRyr3AWrXXCPWg9/WUrS4pcqZMN5p/Jc9N8JV0xFjS0fWk3DrYOzbzxgph0JOp1MJfu0TFPcnzN0+5brAplviPJRVu0AZOWoQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBACP5DKWps9rEe1NOlBsivu9TJP9b9COsFVbi0JOq72jnqKP0R7haLEIYSQOgnnHWxGyBFA3GfuYGktmn5UKZtuZzp2CxUP5p5UyTfWGppIME20ngCfC1Q1vqmfGuDHTl2gYTyyCTjMkaizt28zWpY5rG2GxsZFbS8N96fRmO8FAf</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

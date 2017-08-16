@@ -51,3 +51,5 @@ C:\Users\63530\Documents\Visual Studio 2017\Projects\EDI SI5 Promotion Check Lis
 C:\Users\63530\Documents\Visual Studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\ProjectManager_Name.baml
 C:\Users\raven\GitCraken\EDI-SI5-Promotion-Check-List\EDI SI5 Promotion Check List\obj\Debug\ProjectManager_Name.g.cs
 C:\Users\raven\GitCraken\EDI-SI5-Promotion-Check-List\EDI SI5 Promotion Check List\obj\Debug\ProjectManager_Name.baml
+C:\Users\63530\Documents\Visual Studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\Error_SendButton.g.cs
+C:\Users\63530\Documents\Visual Studio 2017\Projects\EDI SI5 Promotion Check List\EDI SI5 Promotion Check List\obj\Debug\Error_SendButton.baml

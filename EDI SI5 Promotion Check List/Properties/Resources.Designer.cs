@@ -61,11 +61,20 @@ namespace EDI_SI5_Promotion_Check_List.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FormImages.
+        ///   Looks up a localized string similar to Images.
         /// </summary>
-        internal static string FormImages {
+        internal static string attach {
             get {
-                return ResourceManager.GetString("FormImages", resourceCulture);
+                return ResourceManager.GetString("attach", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Images/attachment.png.
+        /// </summary>
+        internal static string AttachButton {
+            get {
+                return ResourceManager.GetString("AttachButton", resourceCulture);
             }
         }
     }

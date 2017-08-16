@@ -41,7 +41,7 @@ namespace EDI_SI5_Promotion_Check_List
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            
+
             this.Close();
         }
 
@@ -51,6 +51,13 @@ namespace EDI_SI5_Promotion_Check_List
             Window mainWindow = curApp.MainWindow;
             this.Left = mainWindow.Left + (mainWindow.Width - this.ActualWidth) / 2;
             this.Top = mainWindow.Top + (mainWindow.Height - this.ActualHeight) / 2;
+        }
+
+        private void txtEmail_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter) {
+            this.Close();
+            }
         }
     }
 }

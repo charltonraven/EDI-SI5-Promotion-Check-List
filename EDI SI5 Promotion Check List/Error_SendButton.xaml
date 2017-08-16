@@ -1,0 +1,19 @@
+﻿<Window x:Name="Window" x:Class="EDI_SI5_Promotion_Check_List.Error_SendButton"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EDI_SI5_Promotion_Check_List"
+        mc:Ignorable="d"
+        Title="Error_SendButton" Height="200.631" Width="249.842" Loaded="Window_Loaded">
+    <Grid Margin="0,0,2,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="239*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Error(s)" Margin="75,0,72,0" VerticalAlignment="Top" HorizontalAlignment="Center" Background="{x:Null}" Foreground="#FFFB0303" FontSize="20" Width="92" Grid.Column="1" Height="37"/>
+        <Label x:Name="lblErrors" Content="Enter the User." Margin="44,37,41,0" VerticalAlignment="Top" HorizontalAlignment="Center" Background="{x:Null}" Foreground="#FFFB0303" FontSize="20" Width="154" Grid.Column="1" Height="37"/>
+
+    </Grid>
+</Window>
