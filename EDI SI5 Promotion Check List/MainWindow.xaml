@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:EDI_SI5_Promotion_Check_List"
         mc:Ignorable="d"
         Title="Promotion Check List" 
-        Height="1048" 
+        Height="1096" 
         Width="{Binding SystemParameters.PrimaryScreenWidth}"
         HorizontalContentAlignment="Center"
         FontSize="22" WindowStartupLocation="Manual"
         ScrollViewer.CanContentScroll="True"
         AutomationProperties.IsOffscreenBehavior="Onscreen"
         ScrollViewer.HorizontalScrollBarVisibility="Auto"
-        Loaded="formMain_loaded" d:DesignWidth="958" ScrollViewer.VerticalScrollBarVisibility="Auto">
+        Loaded="formMain_loaded" d:DesignWidth="958" ScrollViewer.VerticalScrollBarVisibility="Auto" PreviewMouseLeftButtonDown="formMain_PreviewMouseLeftButtonDown" MouseMove="formMain_MouseMove" DragEnter="formMain_DragEnter" Drop="formMain_Drop" AllowDrop="True">
     <ScrollViewer x:Name="formCheckList" Foreground="#FF517A91" Margin="0,0,0,2">
         <Grid x:Name="FormUserApproval" VerticalAlignment="Center" Height="1070" Width="910" ScrollViewer.VerticalScrollBarVisibility="Auto" Loaded="FormUserApproval_Loaded">
             <Grid.ColumnDefinitions>
@@ -26,7 +26,7 @@
                 <RowDefinition Height="41*"/>
             </Grid.RowDefinitions>
             <Label x:Name="lblUser" Content="User:" HorizontalAlignment="Left" Margin="9,44,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax" Grid.Column="1"/>
-            <TextBox x:Name="txtUser" HorizontalAlignment="Left" Height="36" Margin="72,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191" BorderThickness="0,0,0,1" Grid.Column="1" FontSize="18">
+            <TextBox x:Name="txtUser" HorizontalAlignment="Left" Height="36" Margin="72,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191" BorderThickness="0,0,0,1" Grid.Column="1" FontSize="18" TabIndex="0">
                 <TextBox.BorderBrush>
                     <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                         <GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -36,7 +36,7 @@
                 </TextBox.BorderBrush>
             </TextBox>
             <Label x:Name="lblPartner" Content="Partner:" HorizontalAlignment="Left" Margin="284,44,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax" Grid.Column="1"/>
-            <TextBox x:Name="txtPartner" HorizontalAlignment="Left" Height="36" Margin="355,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" BorderThickness="0,0,0,1" Grid.Column="1" FontSize="18" Grid.ColumnSpan="2">
+            <TextBox x:Name="txtPartner" HorizontalAlignment="Left" Height="36" Margin="355,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" BorderThickness="0,0,0,1" Grid.Column="1" FontSize="18" Grid.ColumnSpan="2" TabIndex="1">
                 <TextBox.BorderBrush>
                     <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                         <GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -46,7 +46,7 @@
                 </TextBox.BorderBrush>
             </TextBox>
             <Label x:Name="lblDate" Content="Date:" HorizontalAlignment="Left" Margin="54,44,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax" Grid.Column="2"/>
-            <TextBox x:Name="txtDate" HorizontalAlignment="Left" Height="36" Margin="106,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" BorderThickness="0,0,0,1" Grid.Column="2" FontSize="18">
+            <TextBox x:Name="txtDate" HorizontalAlignment="Left" Height="36" Margin="106,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" BorderThickness="0,0,0,1" Grid.Column="2" FontSize="18" TabIndex="2" TextChanged="txtDate_TextChanged">
                 <TextBox.BorderBrush>
                     <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                         <GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -56,7 +56,7 @@
                 </TextBox.BorderBrush>
             </TextBox>
             <Label x:Name="lblCMRN" Content="Change Management Request Number:" HorizontalAlignment="Left" Margin="329,95,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax" Grid.Column="1" Grid.ColumnSpan="2"/>
-            <TextBox x:Name="txtCMRN" HorizontalAlignment="Left" Height="35" Margin="113,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" BorderThickness="0,0,0,1" Grid.Column="2" FontSize="18">
+            <TextBox x:Name="txtCMRN" HorizontalAlignment="Left" Height="35" Margin="113,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" BorderThickness="0,0,0,1" Grid.Column="2" FontSize="18" TabIndex="4">
                 <TextBox.BorderBrush>
                     <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                         <GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -160,7 +160,7 @@
             </DockPanel>
             <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Height="194" Margin="335,672,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="459" FontSize="12" SpellCheck.IsEnabled="True" BorderThickness="2" ToolTip="Enter Description" TextChanged="txtDescription_TextChanged" Grid.Column="1" Grid.ColumnSpan="2"/>
             <Label x:Name="lblTitle" Content="Title:" HorizontalAlignment="Left" Margin="9,95,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,-0.076" FontSize="14" FontFamily="Lucida Fax" Grid.Column="1"/>
-            <TextBox x:Name="txtTitle" HorizontalAlignment="Left" Height="36" Margin="72,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239" BorderThickness="0,0,0,1" Grid.Column="1" FontSize="18" TextChanged="txtTitle_TextChanged">
+            <TextBox x:Name="txtTitle" HorizontalAlignment="Left" Height="36" Margin="72,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239" BorderThickness="0,0,0,1" Grid.Column="1" FontSize="18" TextChanged="txtTitle_TextChanged" TabIndex="3">
                 <TextBox.BorderBrush>
                     <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                         <GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -175,7 +175,7 @@
                 <CheckBox x:Name="cbSetPartnerInGISStatsTable" Content="Set Partner in GIS Stats Table" FontSize="14" FontFamily="Lucida Fax" Unchecked="cbServiceAdapters_Unchecked" Checked="cbSetPartnerInGISStatsTable_Checked" Height="24" Width="234"/>
             </ListBox>
             <Button Name="btnAddAttachment" Grid.Column="1" Margin="232,639,248,353" BorderThickness="0" Background="{x:Null}" Click="btnAddAttachment_Click">
-                <Image Source="pack://application:,,,/Images/attachment.png"  Height="31" Width="20" RenderTransformOrigin="0.538,0.5"></Image>
+                <Image Source="pack://application:,,,/Images/attachment.png"  Height="31" Width="20" RenderTransformOrigin="0.538,0.5"/>
             </Button>
         </Grid>
     </ScrollViewer>
